@@ -26,6 +26,7 @@ namespace WebScreensaver
             MessageBox.Show("No options available yet :)", "WebApp Screensaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
           case "/p":
+            MessageBox.Show("Preview not available yet :)", "WebApp Screensaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
         }
       }

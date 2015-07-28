@@ -20,6 +20,7 @@
       base.Dispose(disposing);
     }
 
+
     #region Windows Form Designer generated code
 
     /// <summary>
@@ -48,15 +49,36 @@
       this.webBrowser1.TabStop = false;
       this.webBrowser1.Url = new System.Uri("http://pipi/turtle/", System.UriKind.Absolute);
       this.webBrowser1.WebBrowserShortcutsEnabled = false;
+      this.webBrowser1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CausesValidation = false;
       this.ClientSize = new System.Drawing.Size(1008, 729);
       this.Controls.Add(this.webBrowser1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "Form1";
-      this.Text = "Form1";
+      this.Text = "WebScreensaver";
+      this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+      this.ResizeBegin += new System.EventHandler(this.Form1_MouseEnter);
+      this.ResizeEnd += new System.EventHandler(this.Form1_MouseEnter);
+      this.Click += new System.EventHandler(this.Form1_MouseEnter);
+      this.DoubleClick += new System.EventHandler(this.Form1_MouseEnter);
+      this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+      this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
+      this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+      this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+      this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+      this.MouseCaptureChanged += new System.EventHandler(this.Form1_MouseEnter);
+      this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+      this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
+      this.MouseLeave += new System.EventHandler(this.Form1_MouseEnter);
+      this.MouseHover += new System.EventHandler(this.Form1_MouseEnter);
+      this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+      this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+      this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
       this.ResumeLayout(false);
 
     }

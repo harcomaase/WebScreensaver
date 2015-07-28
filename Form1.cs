@@ -16,5 +16,35 @@ namespace WebScreensaver
     {
       InitializeComponent();
     }
+
+    private void ExitApplication()
+    {
+      Application.Exit();
+    }
+
+    private void Form1_MouseMove(object sender, MouseEventArgs e)
+    {
+      ExitApplication();
+    }
+
+    private void Form1_KeyDown(object sender, KeyEventArgs e)
+    {
+      ExitApplication();
+    }
+
+    private void Form1_MouseEnter(object sender, EventArgs e)
+    {
+      ExitApplication();
+    }
+
+    private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      
+    }
+
+    private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+    {
+      ExitApplication();
+    }
   }
 }
