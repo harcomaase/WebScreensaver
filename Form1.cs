@@ -12,13 +12,15 @@ namespace WebScreensaver
 {
   public partial class Form1 : Form
   {
-    public Form1()
+    public Form1(String displayUrl)
     {
       ApplicationMouseHandler mouseHandler = new ApplicationMouseHandler();
       mouseHandler.mouseMoved += new MouseMovementEvent(mouseMovement);
       Application.AddMessageFilter(mouseHandler);
 
       InitializeComponent();
+
+      this.webBrowser1.Url = new System.Uri(displayUrl, System.UriKind.Absolute);
     }
 
     private Point mousePosition = new Point(-1,-1);

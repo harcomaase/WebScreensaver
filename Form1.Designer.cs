@@ -47,7 +47,7 @@
       this.webBrowser1.Size = new System.Drawing.Size(1024, 768);
       this.webBrowser1.TabIndex = 0;
       this.webBrowser1.TabStop = false;
-      this.webBrowser1.Url = new System.Uri("http://pipi/turtle/", System.UriKind.Absolute);
+      this.webBrowser1.Url = new System.Uri("http://www.bing.com", System.UriKind.Absolute);
       this.webBrowser1.WebBrowserShortcutsEnabled = false;
       this.webBrowser1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
       // 

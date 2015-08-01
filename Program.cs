@@ -8,39 +8,55 @@ namespace WebScreensaver
 {
   static class Program
   {
+    private const String FALLBACK_URL = "http://pipi/turtle";
+
     /// <summary>
     /// The main entry point for the application.
     /// </summary>
     [STAThread]
     static void Main(string[] args)
     {
+      Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\WebScreensaver");
+      
+      String displayUrl = key == null || key.GetValue("displayUrl") == null ? FALLBACK_URL : (String) key.GetValue("displayUrl");
+
       if (args.Length > 0)
       {
         String param = args[0].ToLower().Trim();
         switch (param)
         {
           case "/s":
-            start();
+            start(displayUrl);
             break;
           case "/c":
-            MessageBox.Show("No options available yet :)", "WebApp Screensaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            configure(displayUrl);
             break;
           case "/p":
-            MessageBox.Show("Preview not available yet :)", "WebApp Screensaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (args.Length < 2)
+            {
+              MessageBox.Show("Error while rendering screensaver preview");
+              //preview implemented later. this feels kind of unneccessary
+            }
             break;
         }
       }
       else
       {
-        start();
+        configure(displayUrl);
+        //start(displayUrl);
       }
     }
 
-    static void start()
+    static void start(String displayUrl)
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Form1());
+      Application.Run(new Form1(displayUrl));
+    }
+
+    static void configure(String displayUrl)
+    {
+      Application.Run(new ConfigurationDialog(displayUrl));
     }
   }
 }
