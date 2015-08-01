@@ -23,21 +23,23 @@ namespace WebScreensaver
       if (args.Length > 0)
       {
         String param = args[0].ToLower().Trim();
-        switch (param)
-        {
-          case "/s":
-            start(displayUrl);
-            break;
-          case "/c":
-            configure(displayUrl);
-            break;
-          case "/p":
-            if (args.Length < 2)
-            {
-              MessageBox.Show("Error while rendering screensaver preview");
-              //preview implemented later. this feels kind of unneccessary
-            }
-            break;
+        if (param.Length > 1) { 
+          switch (param.Substring(0,2))
+          {
+            case "/s":
+              start(displayUrl);
+              break;
+            case "/c":
+              configure(displayUrl);
+              break;
+            case "/p":
+              if (args.Length < 2)
+              {
+                MessageBox.Show("Error while rendering screensaver preview");
+                //preview implemented later. this feels kind of unneccessary
+              }
+              break;
+          }
         }
       }
       else
