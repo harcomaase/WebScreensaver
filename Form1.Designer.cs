@@ -62,6 +62,7 @@
       this.Name = "Form1";
       this.Text = "WebScreensaver";
       this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+      this.Load += new System.EventHandler(this.Form1_Load);
       this.ResizeBegin += new System.EventHandler(this.Form1_MouseEnter);
       this.ResizeEnd += new System.EventHandler(this.Form1_MouseEnter);
       this.Click += new System.EventHandler(this.Form1_MouseEnter);
