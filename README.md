@@ -7,6 +7,4 @@ So far, the webpage is hard coded, but it's shown full screen. In the screensave
 You also have to build the project, then rename the file extension to .scr, and put the file into C:\Windows\SysWOW64 to make it selectable in the screensaver menu.
 
 ## Roadmap
-- exiting the screensaver with mouse movement or click or key presses
-- make the screensaver configurable, to enter at least the shown webpage
 - maybe expand to show multiple pages / cycle through them / cool stuff
